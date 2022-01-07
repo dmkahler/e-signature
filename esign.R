@@ -31,7 +31,7 @@ for (j in 1:100) { # tries 100 times to generate a unique verification hash.
      }
 }
 
-filename <- paste0("kahler_",hash,".png")
+filename <- paste0("/Users/davidkahler/Documents/kahler_",hash,".png")
 png(filename, width = 600, height = 150) # this file was set to be at 300dpi, 4 in by 0.5 in.
 par(mar=c(0,0,0,0))
 plot(c(0, 1), c(0, 1), ann = F, bty = 'n', type = 'n', xaxt = 'n', yaxt = 'n')
