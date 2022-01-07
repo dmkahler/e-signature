@@ -13,6 +13,7 @@ sig <- png::readPNG("kahler_sig.png")
 name <- "David M. Kahler"
 signingTime <- Sys.time()
 ver <- abs(round((10^12)*rnorm(1)))
+ver <- used$V1[1] # for testing only
 unique <- 0
 for (j in 1:100) { # tries 100 times to generate a unique verification hash.
      print("j")
@@ -30,6 +31,8 @@ for (j in 1:100) { # tries 100 times to generate a unique verification hash.
           }
      }
      if (unique==1) {
+          print("j")
+          print(j)
           print("unique pass")
           break
      }
