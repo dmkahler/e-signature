@@ -1,2 +1,2 @@
-# e-signature
-Repository of electronically signed documents for verification
+# e-signature  
+This repository contains two elements.  First, is a simple electronic signature code to generate electronic signatures with images and a log.  Second, is that log, which is pulled from my website.  
