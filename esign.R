@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-desc <- commandArgs(trailingOnly=TRUE)
+d <- commandArgs(trailingOnly=TRUE)
 if (length(d)==0) {
      desc <- "no description provided"
 } else {
