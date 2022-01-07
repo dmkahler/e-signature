@@ -13,41 +13,35 @@ sig <- png::readPNG("kahler_sig.png")
 name <- "David M. Kahler"
 signingTime <- Sys.time()
 ver <- abs(round((10^12)*rnorm(1)))
-ver <- used$V1[1] # for testing only
+hash <- "ERROR" # error flag if there is no unique hash generated.
 unique <- 0
 for (j in 1:100) { # tries 100 times to generate a unique verification hash.
-     print("j")
-     print(j)
      for (i in nrow(used)) {
-          print("i")
-          print(i)
           if (used$V1[i] == ver) {
                ver <- abs(round((10^12)*rnorm(1)))
-               print("resetting ver")
-               break
+               break # breaks to check again
           }
           if (i == nrow(used)) {
-               unique <- 1
+               unique <- 1 # only if it gets to the end without resetting ver
           }
      }
      if (unique==1) {
-          print("j")
-          print(j)
-          print("unique pass")
-          break
+          hash <- ver
+          break # stops trials
      }
-     print("checking again")
 }
 
+filename <- paste0("kahler_",hash,".png")
+png(filename, width = 600, height = 150) # this file was set to be at 300dpi, 4 in by 0.5 in.
 par(mar=c(0,0,0,0))
 plot(c(0, 1), c(0, 1), ann = F, bty = 'n', type = 'n', xaxt = 'n', yaxt = 'n')
 grid::grid.raster(sig)
-text(x = 0.58, y = 0.63, paste("Electronically signed by:"), cex = 1, col = "black", family="sans", font=1, adj=0)
-text(x = 0.58, y = 0.57, paste(name), cex = 2, col = "black", family="sans", font=1, adj=0)
-text(x = 0.58, y = 0.51, paste(format(signingTime, "%d %b %Y, %H:%M %Z")), cex = 1, col = "black", family="sans", font=1, adj=0)
-text(x = 0.58, y = 0.47, paste("Verification: ",ver), cex = 1, col = "black", family="sans", font=1, adj=0)
-text(x = 0.58, y = 0.43, paste("dmkahler.github.io/esign.html"), cex = 1, col = "black", family="sans", font=1, adj=0)
-
+text(x = 0.55, y = 0.9, paste("Electronically signed by:"), cex = 1, col = "black", family="sans", font=1, adj=0)
+text(x = 0.55, y = 0.75, paste(name), cex = 2, col = "black", family="sans", font=1, adj=0)
+text(x = 0.55, y = 0.6, paste(format(signingTime, "%d %b %Y, %H:%M %Z")), cex = 1, col = "black", family="sans", font=1, adj=0)
+text(x = 0.55, y = 0.5, paste("Verification: ",hash), cex = 1, col = "black", family="sans", font=1, adj=0)
+text(x = 0.55, y = 0.4, paste("dmkahler.github.io/esign.html"), cex = 1, col = "black", family="sans", font=1, adj=0)
+dev.off()
 
 out <- data.frame(ver, signingTime, desc)
 write.table(out, file="verificationlog.csv", append = TRUE, sep = ",", row.names = FALSE, col.names = FALSE)
