@@ -1,6 +1,6 @@
 #! /bin/bash
 
-Rscript esign.R "USAID ADS303 certification of no narcotics or drug offenses"
+Rscript esign.R "Request for data from CENCARTA"
 git add verificationlog.csv
 git add sign.bat
 git commit -m "updated log"
