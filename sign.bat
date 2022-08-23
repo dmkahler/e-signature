@@ -1,6 +1,6 @@
 #! /bin/bash
 
-Rscript esign.R "Request for data from ARA-SOL"
+Rscript esign.R "Hiltons thesis MOU"
 git add verificationlog.csv
 git add sign.bat
 git commit -m "updated log"
