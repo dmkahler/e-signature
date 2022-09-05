@@ -1,6 +1,6 @@
 #! /bin/bash
 
-Rscript esign.R "Hiltons thesis MOU"
+Rscript esign.R "Hostetler honors fellows application"
 git add verificationlog.csv
 git add sign.bat
 git commit -m "updated log"
