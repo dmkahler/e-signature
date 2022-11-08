@@ -1,6 +1,6 @@
 #! /bin/bash
 
-Rscript esign.R "2022 conflict of interest disclosure"
+Rscript esign.R "Bakar ETD form"
 git add verificationlog.csv
 git add sign.bat
 git commit -m "updated log"
