@@ -1,6 +1,6 @@
 #! /bin/bash
 
-Rscript esign.R "MDPI voucher use - Mxolisi's review paper"
+Rscript esign.R "Martin - 2023 URP endorsement"
 git add verificationlog.csv
 git add sign.bat
 git commit -m "updated log"
