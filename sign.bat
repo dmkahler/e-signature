@@ -1,6 +1,6 @@
 #! /bin/bash
 
-Rscript esign.R "SAN Parks data agreement for crayfish, macroinvert, water physicoshemical"
+Rscript esign.R "Fortsch URP agreement"
 git add verificationlog.csv
 git add sign.bat
 git commit -m "updated log"
