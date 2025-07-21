@@ -1,6 +1,6 @@
 #! /bin/bash
 
-Rscript esign.R "Summer 2024 grade changes"
+Rscript esign.R "Paudel, English - Certified"
 git add verificationlog.csv
 git add sign.bat
 git commit -m "updated log"
