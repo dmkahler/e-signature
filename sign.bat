@@ -1,6 +1,6 @@
 #! /bin/bash
 
-Rscript esign.R "Beall, English - Certified"
+Rscript esign.R "Reeder ClaimsConf - J. Reeder"
 git add verificationlog.csv
 git add sign.bat
 git commit -m "updated log"
