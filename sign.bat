@@ -1,6 +1,6 @@
 #! /bin/bash
 
-Rscript esign.R "Bathgate contract request"
+Rscript esign.R "Lawson-Bulten contract request"
 git add verificationlog.csv
 git add sign.bat
 git commit -m "updated log"
