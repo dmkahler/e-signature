@@ -1,6 +1,6 @@
 #! /bin/bash
 
-Rscript esign.R "Zeyzus English certification"
+Rscript esign.R "Reeder FAE 2026"
 
 git add verificationlog.csv
 git add sign.bat
